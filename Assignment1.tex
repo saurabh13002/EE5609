@@ -1,71 +1,174 @@
-l\documentclass{article}{\Huge} 
-\usepackage[utf8]{inputenc}
-\usepackage{mathtools}
-\usepackage{latexsym}
-\usepackage{ragged2e}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
 \usepackage{gensymb}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead{}
-\fancyfoot{}
-\fancyhead[L]{\MakeUppercase{assignment} 1}
-\fancyhead[R]{Saurabh joshi}
-\title{Proj1}
-\author{ai20mtech13002 }
-\date{September 2020}
-\usepackage{natbib}
-\usepackage{graphicx}
-\usepackage{textcomp}
+%\doublespacing
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+
 \begin{document}
 \begin{flushleft}
 \\ \bf Ques: Find a unit vector that makes an angle of 90\degree,135\degree,45\degree with positive X,Y and Z axis respectively.\end{flushleft}
 \begin{flushleft}
  \textbf{Soln} : Given,
  
-$\alpha&=90\degree, 
+$\alpha =90\degree,
 
 $\beta&=135\degree,
 
-$\gamma&=45\degree.\end{flushleft}
+$\gamma&=45\degree$.
 
+\end{flushleft}
+\\i.e l&=cos90\degree= 0,
+m&=cos135\degree=\dfrac{-1}{\sqrt{2}},
 
-\\ 
-i.e l=cos90\degree=0,
-m=cos135\degree=\dfrac{-1}{\sqrt{2}},
-n=cos45\degree=\dfrac{1}{\sqrt{2}}\vspace{7mm}
-\hspace{18mm}\
-  
-  \begin{equation}
-      
-  
-  
-   
-\\\implies
-   \bf \vec{m} =\begin{bmatrix} \myvec{\cos 90^{\circ} \\ \cos 135^{\circ} \\ \cos 45^{\circ}}\end{bmatrix}
-   \hspace{64mm}  \end{equation} 
-                      
-
-\vspace{10mm}\\Also,we know that,
-
+n&=cos45\degree=\dfrac{1}{\sqrt{2}}\vspace{7mm}
+\hspace{18mm}
 \begin{equation}
 
-$\bf\Vec{m}=\frac{\Vec{m}}{\lVert {m}\rVert}$\vspace{8mm}
+\implies\vec{m} = \myvec{\cos 90\degree     \\ \cos 135\degree\\ \cos45\degree}
+\hspace{22mm}\end{equation}
 
-$\lVert \bf \myvec{m} \rVert$= \sqrt{0^2+(\frac{-1}{\sqrt{2}})^2+(\frac{1}{\sqrt{2}})^2} 
-\vspace{8mm}
-\\\implies\hspace{4mm} {\lVert \bf{m} \rVert}=1\hspace{77mm}\end{equation}\\
+\\Also,we know that,
+\begin{equation}
+\Vec{m}=\frac{\Vec{m}}{\lVert \vec{m} \rVert}
+\vspace{12mm}
+$\lVert \vec{m} \rVert= \sqrt{0^2+(\frac{-1}{\sqrt{2}})^2+(\frac{1}{\sqrt{2}})^2} $
+\\\\
 
-Hence,from (1)and(2) we have the unit vector: $\bf\vec{m}=\begin{bmatrix} \bf0 \\ \bf\frac{-1}{\sqrt{2}} \\ \bf\frac{1}{\sqrt{2}}\end{bmatrix}$
+\implies{\lVert \vec{m} \rVert}=1
+\hspace{36mm}\end{equation}
+\\
 
- 
-
-
-
-
-
-
+Hence,from (0.0.1)and(0.0.2) we have the unit vector:
+$\vec{m} = \myvec{ 0 \\ \frac{-1} {\sqrt{2}}\\ \frac{1}{\sqrt{2}}}$
 
 \end{document}
