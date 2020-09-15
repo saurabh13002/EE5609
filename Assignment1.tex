@@ -142,28 +142,33 @@ columns=fullflexible
 AI20MTECH13002 }
 \maketitle
 \newpage
-\begin{flushleft}
-\\ \bf Ques: Find a unit vector that makes an angle of 90\degree,135\degree,45\degree with positive X,Y and Z axis respectively.\end{flushleft}
-\begin{flushleft}
+\begin{abstract}
+This document contains the solution to find a unit vector that makes an angle of 90\degree,135\degree,45\degree with positive X,Y and Z axis respectively.
+\end{abstract}
+
  \textbf{Soln} : Given,
-\begin{equation}
+ 
+ 
+ 
+ \begin{align}
+ \vec m = \myvec{\cos 90\degree     \\ \cos 135\degree\\ \cos45\degree}
+ \label{eq1}
+ \end{align}
 
-\implies\vec{m} = \myvec{\cos 90\degree     \\ \cos 135\degree\\ \cos45\degree}
-\hspace{22mm}\end{equation}
-\\ \vspace{1cm}
 we know that,
-\begin{equation}
-\Vec{m}=\frac{\Vec{m}}{\lVert \vec{m} \rVert}
-\vspace{1cm}\\
+\begin{align}
+  \vec m=\frac{\vec m }{\norm{\vec m }}
+\end{align}
+
 Also,
-$\lVert \vec{m} \rVert= \sqrt{0^2+(\frac{-1}{\sqrt{2}})^2+(\frac{1}{\sqrt{2}})^2} $
-\vspace{1cm}
 
-\implies{\lVert \vec{m} \rVert}=1
-\hspace{36mm}\end{equation}\vspace{1cm}
-\\
+\begin{align}
+{\norm{\vec m }}= \sqrt{0^2+(\frac{-1}{\sqrt{2}})^2+(\frac{1}{\sqrt{2}})^2} 
+\implies{\norm{\vec m }}=1
+\label{eq2}
+\end{align}
 
-Hence,from (0.0.1) and (0.0.2) we have the unit vector:
-$\vec{m} = \myvec{ 0 \\ \frac{-1} {\sqrt{2}}\\ \frac{1}{\sqrt{2}}}$
+Hence,From \eqref{eq1} and \eqref{eq2} we have the unit vector:
+$\vec m = \myvec{ 0 \\ \frac{-1} {\sqrt{2}}\\ \frac{1}{\sqrt{2}}}$
 
 \end{document}
