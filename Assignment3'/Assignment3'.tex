@@ -169,7 +169,7 @@ This  document provides solution to problem 1.42 of Triangle Exercises.
 Download all latex-tikz codes from 
 %
 \begin{lstlisting}
-https://github.com/ Saurabh 13002/EE5609/tree/master
+https://github.com/saurabh13002/EE5609/blob/master/Assignment3'
 \end{lstlisting}
 %
 \section{Problem}
@@ -189,14 +189,12 @@ Given conditions are : $\triangle {ABC}$  is a triangle having \angle PBC < \ang
 \begin{align}
 \frac{\left( \vec{P - B} \right)^T  \left( \vec{B - C } \right)}{\norm{\vec{ P - B}} \norm{\vec{B - C}}}<\frac{\left( \vec{ Q - C} \right)^T  \left( \vec{C - B} \right)}{\norm{\vec{ Q - C}} \norm{\vec{C - B}}}
 \end{align}
-\begin{multline}\implies\frac{\left( \vec{P - B+A-B} \right)^T  \left( \vec{B - C } \right)}{\norm{\vec{ P - B}} }<\\\frac{\left( \vec{ Q - C+A-C} \right)^T  \left( \vec{C - B} \right)}{\norm{\vec{ Q - C}}}
-\end{multline}
-As,$\vec{ P - B}$,$\vec{ A - B}$ and $\vec{ Q - C}$,$\vec{ A - C}$ are in same direction.
 
+Let, $\vec{ P - B}= K_1 (\vec{ A - B})$ and $\vec{ Q - C} = K_2 (\vec{ A - C})$
+Also, \norm{\vec{C - B}} = \norm{\vec{B - C}}
 \begin{multline}
-\implies\frac{\left( \vec{A - B+A-B} \right)^T  \left( \vec{B - C } \right)}{\norm{\vec{ A - B}} }<\\\frac{\left( \vec{ A - C+A-C} \right)^T  \left( \vec{C - B} \right)}{\norm{\vec{ A - C}}}
+\implies\frac{\left(K_1 (\vec{A - B}) \right)^T  \left( \vec{B - C } \right)}{\norm{K_1(\vec{ A - B})} }<\\\frac{\left(K_2 (\vec{A - C}) \right)^T  \left( \vec{C - B} \right)}{\norm{K_2(\vec{ A - C})}}
 \end{multline}
-
 \begin{align}
 \implies\frac{\left( \vec{A - B} \right)^T  \left( \vec{B - C } \right)}{\norm{\vec{ A - B}} }<\frac{\left( \vec{ A - C} \right)^T  \left( \vec{C - B} \right)}{\norm{\vec{ A - C}}}
 \end{align}
