@@ -81,7 +81,7 @@ xActualparab = P@xStandardparab + c[:,np.newaxis]
 #Labeling the coordinates
 parab_coords = np.vstack((O,c)).T
 plt.scatter(parab_coords[0,:], parab_coords[1,:])
-vert_labels = ['$O$','$c (1.108, 3.7204)$']
+vert_labels = ['$O$','$c (1.11, 3.73)$']
 for i, txt in enumerate(vert_labels):
     plt.annotate(txt, # this is the text
                  (parab_coords[0,i], parab_coords[1,i]), # this is the point to label
