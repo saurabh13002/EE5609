@@ -167,7 +167,6 @@ This document contains solution to determine the conic representing the given eq
 Download the latex-tikz codes from 
 %
 %
-latex-tikz codes from 
 %
 \begin{lstlisting}
 https://github.com/saurabh13002/EE5609/tree/master/Assignment4
@@ -252,28 +251,33 @@ When $\mydet{\vec{V}}=0$, \eqref{eqmain} can be written as
 Substituting the found values
 \begin{align}
 \vec{u}^T + \frac{\eta}{2}\vec{p_1}^T = \myvec{3&-2}+\frac{3-2\sqrt{3}}{2}\myvec{\frac{1}{2}&\frac{\sqrt{3}}{2}}\\
-\implies\vec{u}^T + \frac{\eta}{2}\vec{p_1}^T =\myvec{\frac{15-2\sqrt{3}}{4}&\frac{-14-3\sqrt{3}}{4}}\label{eq2.23} \\
+\implies\vec{u}^T + \frac{\eta}{2}\vec{p_1}^T =\myvec{\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}}\label{eq2.23} \\
 \frac{\eta}{2} \vec{p_1} -\vec{u}= \myvec{\frac{-9-2\sqrt{3}}{4}\\ \frac{2+3\sqrt{3}}{4}}\label{eq2.24}
 \end{align}
 using equations \eqref{given1},\eqref{given2},\eqref{eq2.3},\eqref{eq2.23},\eqref{eq2.24} and \eqref{eq2.3} in \eqref{eqa}
 \begin{align}
-    \myvec{2.88 & -2.20 & \\3 & -\sqrt{3}\\ -\sqrt{3}& 3}\vec{c} =\myvec{ -5\\-3.11 \\1.8}\label{eqcen}
+    \myvec{\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}\\3 & -\sqrt{3}\\ -\sqrt{3}& 1}\vec{c} =\myvec{ -5\\\frac{-9-2\sqrt{3}}{4}\\ \frac{2+3\sqrt{3}}{4}}\label{eqcen}
 \end{align}
 By performing row reductions on augmented matrix
-\begin{align}
-\myvec{2.88 & -2.2 & -5\\3 & -\sqrt{3} & -3.11\\-\sqrt{3} & 1 & 1.8}\xleftrightarrow[]{R_2\leftarrow R_2/\sqrt{3}}\\
-\myvec{2.88 & -2.2 & -5\\\sqrt{3} & -1 & -1.8\\-\sqrt{3} & 1 & 1.8 }\\
-\xleftrightarrow[]{R_3\leftarrow R_2+R_3}
-\myvec{2.88 & -2.2 & -5\\\sqrt{3} & -1 & -1.8\\0 & 0 & 0}
-\end{align}
+\begin{multline}
+\myvec{\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}&-5\\3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\ -\sqrt{3}& 1&\frac{2+3\sqrt{3}}{4}}{R_2\xleftrightarrow[]{}{R_1}}\\
+\myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}&-5\\-\sqrt{3}& 1&\frac{2+3\sqrt{3}}{4} }
+\end{multline}
+\begin{multline}
+\myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}&-5\\-\sqrt{3}& 1&\frac{2+3\sqrt{3}}{4}}
+\xleftrightarrow[]{R_2\leftarrow R_2-\frac{15-2\sqrt{3}}{12}R_1}\\
+\myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\0 & 2(\sqrt{3}-2) & \frac{(4\sqrt{3}-39)}{16}\\\sqrt{3}& 1&\frac{2+3\sqrt{3}}{4}}
+\end{multline}
 Therefore, 
-\begin{align}
-\myvec{2.88 & -2.2 & -5\\\sqrt{3} & -1 & -1.8}\xleftrightarrow[R_1={\sqrt{3}}R_1]{R_2=(2.88)R_2}
-\myvec{4.99 & -3.81 & -8.66\\4.99 & -2.88 & -5.191}\\
-\implies \myvec{4.99 & -3.81 & -8.66\\4.99 & -2.88 & -5.191}\xleftrightarrow{R_2=R_2-R_1}
-\myvec{4.99 & -3.81 & -8.66\\0 & 0.93& 3.46}
-\end{align}
-Hence we get $\vec{c}$=$\myvec{1.10\\3.72}$.The vertex of parabola at (1.10, 3.72).
+\begin{multline}
+ \myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\0&2(\sqrt{3}-2)&(4\sqrt{3}-39)\\-\sqrt{3}& 1&\frac{(2+3\sqrt{3})}{4}}\xleftrightarrow[]{R_3\leftarrow R_3+\frac{1}{\sqrt{3}}R_1}\\
+\myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\0 & 2(\sqrt{3}-2) & \frac{(4\sqrt{3}-39)}{16}\\0& 0&0}
+\end{multline}
+On solving for values of $\vec{c}$ from the augmented matrix we get
+\begin{multline}
+\myvec{3 & -1.732&-3.11\\0 & -0.535 & -2\\0& 0&0}
+\end{multline}
+Hence $\vec{c}$=$\myvec{1.11\\3.73}$.The vertex of parabola at (1.11, 3.73).
 \renewcommand{\thefigure}{1}
 \begin{figure}[!ht]
     \centering
@@ -281,5 +285,5 @@ Hence we get $\vec{c}$=$\myvec{1.10\\3.72}$.The vertex of parabola at (1.10, 3.7
     \caption{Parabola with the center c}
     \label{Fig:1}
 \end{figure}
-
 \end{document}
+ 
