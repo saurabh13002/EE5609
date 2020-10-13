@@ -1,0 +1,298 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\begin{document}
+%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{\ensuremath{E\left[ #1 \right]}}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand\inv[1]{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{EE5609: Matrix Theory\\
+          Assignment-4\\}
+\author{Major Saurabh Joshi\\MTech Artificial Intelligence\\AI20MTECH13002 }
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document contains solution to determine the conic representing the given equation. 
+\end{abstract}
+Download the latex-tikz codes from 
+%
+%
+%
+\begin{lstlisting}
+https://github.com/saurabh13002/EE5609/tree/master/Assignment4
+\end{lstlisting}
+%
+\section{Problem}
+What conic does the following equation represent. 
+\begin{align*}
+y^2-2\sqrt{3}xy+3x^2+6x-4y+5 = 0
+\end{align*}
+Find the center and equation refereed to centre.
+\section{Solution}
+The general second degree equation can be expressed as follows,
+\begin{align}
+\vec{x^T}\vec{V}\vec{x}+2\vec{u^T}\vec{x}+f=0\label{eqmain}
+\end{align}
+From the given second degree equation we get,
+\begin{align}
+\vec{V} &= \myvec{3&-\sqrt{3}\\-\sqrt{3}&1}\\ \label{given1}
+\vec{u} &= \myvec{3\\-2}\\ 
+f &= 5 \label{given2}
+\end{align}
+Expanding the determinant of $\vec{V}$ we observe, 
+\begin{align}
+\mydet{3&-\sqrt{3}\\-\sqrt{3}&1} = 0 \label{eq2.1}
+\end{align}
+Also
+\begin{align}
+    \mydet{\vec{V}&\vec{u} \\\vec{u}^T & f}=
+    \mydet{3&-\sqrt{3}&3\\-\sqrt{3}&1 &-2\\3 &-2&5}
+    \neq 0\label{eq2.2}\end{align}
+Hence from \eqref{eq2.1} and \eqref{eq2.2} we conclude that given equation is a parabola. The characteristic equation of $\vec{V}$ is given as follows,
+\begin{align}
+\mydet{\vec{V}-\lambda\vec{I}} = \mydet{3-\lambda &-\sqrt{3}\\-\sqrt{3}& 1-\lambda} &= 0\\
+\implies \lambda^2-4\lambda &= 0\label{eqchar}
+\end{align}
+Hence the characteristic equation of $\vec{V}$ is given by \eqref{eqchar}. The roots of \eqref{eqchar} i.e the eigenvalues are given by
+\begin{align}
+\lambda_1=0, \lambda_2=4\label{eqeigenvals}    
+\end{align}
+The eigen vector $\vec{p}$ is defined as, 
+\begin{align}
+\vec{V}\vec{p} &= \lambda\vec{p}\\
+\implies\brak{\vec{V}-\lambda\vec{I}}\vec{p}&=0 \label{eqev}
+\end{align}
+for $\lambda_1=0$,
+\begin{align}
+\brak{\vec{V}-\lambda_1\vec{I}}&=\myvec{3&-\sqrt{3}\\-\sqrt{3}&1}\xleftrightarrow[R_1=\frac{1}{\sqrt{3}}R_1]{R_2=R_1+R_2}\myvec{\sqrt{3}&-1\\0&0}\label{eq2.3.0}
+\end{align}
+Substiuting equation \ref{eq2.3.0} in equation \ref{eqev} and upon normalizing we get we get
+\begin{align}
+\implies\vec{p_1}&=\myvec{1/2\\\sqrt{3}/2} \label{eq2.3}
+\end{align}
+Again, for $\lambda_2=4$,
+\begin{align}
+\brak{\vec{V}-\lambda_2\vec{I}}&=\myvec{-1&-\sqrt{3}\\-\sqrt{3}&-3}\xleftrightarrow[R_1=-\sqrt{3}R_1]{R_2=-\sqrt{3}R_1+R_2}\myvec{1&\sqrt{3}\\0&0} \label{eq2.3.1}
+\end{align}
+Substiuting equation \ref{eq2.3.1} in equation  \ref{eqev} and upon normalizing we get
+\begin{align}
+        \vec{p_2}&=\myvec{-\sqrt{3}/2 \\1/2} \label{eqp1}
+\end{align}
+The matrix \vec{P},
+\begin{align}
+\vec{P}&=\myvec{\vec{p_1}&\vec{p_2}}=\myvec{1/2&-\sqrt{3}/2\\\sqrt{3}/2&1/2} \\
+\vec{D}&=\myvec{0&0\\0&4}
+\end{align}
+\begin{align}
+    \eta=2\vec{p_1}^T\vec{u}=3-2\sqrt{3} 
+\end{align}
+The focal length of the parabola is given by:
+\begin{align}
+    \abs{\frac{\eta}{\lambda_2}} 
+    = \abs{\frac{3-2\sqrt{3}}{4}} = 0.116
+\end{align}
+When $\mydet{\vec{V}}=0$, \eqref{eqmain} can be written as
+\begin{align}
+    \vec{y^T}\vec{D}\vec{y}&=-\eta\myvec{1&0}\vec{y}\label{eq2.4}
+    \intertext{And the vertex $\vec{c}$ is given by }
+    \myvec{\vec{u^T}+\frac{\eta}{2}\vec{p_1^T} \\ \vec{V}}\vec{c}=
+    \myvec{-f \\ \frac{\eta}{2}\vec{p_1}-\vec{u}}\label{eqa} 
+\end{align}
+Substituting the found values
+\begin{align}
+\vec{u}^T + \frac{\eta}{2}\vec{p_1}^T = \myvec{3&-2}+\frac{3-2\sqrt{3}}{2}\myvec{\frac{1}{2}&\frac{\sqrt{3}}{2}}\\
+\implies\vec{u}^T + \frac{\eta}{2}\vec{p_1}^T =\myvec{\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}}\label{eq2.23} \\
+\frac{\eta}{2} \vec{p_1} -\vec{u}= \myvec{\frac{-9-2\sqrt{3}}{4}\\ \frac{2+3\sqrt{3}}{4}}\label{eq2.24}
+\end{align}
+using equations \eqref{given1},\eqref{given2},\eqref{eq2.3},\eqref{eq2.23},\eqref{eq2.24} and \eqref{eq2.3} in \eqref{eqa}
+\begin{align}
+    \myvec{\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}\\3 & -\sqrt{3}\\ -\sqrt{3}& 1}\vec{c} =\myvec{ -5\\\frac{-9-2\sqrt{3}}{4}\\ \frac{2+3\sqrt{3}}{4}}\label{eqcen}
+\end{align}
+By performing row reductions on augmented matrix
+\begin{multline}
+\myvec{\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}&-5\\3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\ -\sqrt{3}& 1&\frac{2+3\sqrt{3}}{4}}{R_2\xleftrightarrow[]{}{R_1}}\\
+\myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}&-5\\-\sqrt{3}& 1&\frac{2+3\sqrt{3}}{4} }
+\end{multline}
+\begin{multline}
+\myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\\frac{15-2\sqrt{3}}{4}&\frac{-14+3\sqrt{3}}{4}&-5\\-\sqrt{3}& 1&\frac{2+3\sqrt{3}}{4}}
+\xleftrightarrow[]{R_2\leftarrow R_2-\frac{15-2\sqrt{3}}{12}R_1}\\
+\myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\0 & 2(\sqrt{3}-2) & \frac{(4\sqrt{3}-39)}{16}\\\sqrt{3}& 1&\frac{2+3\sqrt{3}}{4}}
+\end{multline}
+Therefore, 
+\begin{multline}
+ \myvec{3 & -\sqrt{3}&\frac{(-9-2\sqrt{3})}{4}\\0&2(\sqrt{3}-2)&\frac{(4\sqrt{3}-39)}{16}\\-\sqrt{3}& 1&\frac{(2+3\sqrt{3})}{4}}\xleftrightarrow[]{R_3\leftarrow R_3+\frac{1}{\sqrt{3}}R_1}\\
+\myvec{3 & -\frac{433}{250}&-\frac{311}{100}\\0 & -\frac{107}{200} & -2\\0& 0&0}
+\end{multline}
+\renewcommand{\thefigure}{1}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\columnwidth]{parabola.png}
+    \caption{Parabola with the center c}
+    \label{Fig:1}
+\end{figure}
+\begin{multline}
+\myvec{3 & -\frac{433}{250}&-\frac{311}{100}\\0 & -\frac{107}{200} & -2\\0& 0&0}\xleftrightarrow[]{R_1\leftarrow \frac{R_1}{{3}}}\\\myvec{1& -\frac{433}{750}&-\frac{311}{300}\\0 & -\frac{107}{200} & -2\\0& 0&0}
+\end{multline}
+\begin{multline}
+\myvec{1 & -\frac{433}{750}&-\frac{311}{300}\\0 & -\frac{107}{200} & -2\\0& 0&0}\xleftrightarrow[]{R_2\leftarrow \frac{-200}{{107}}R_2}\\
+\myvec{1 & -\frac{433}{750}&-\frac{311}{300}\\0 & 1 & \frac{400}{107}\\0& 0&0}
+\end{multline}
+
+\begin{multline}
+\myvec{1 & -\frac{433}{750}&-\frac{311}{300}\\0 & 1 & \frac{400}{107}\\0& 0&0}\xleftrightarrow[]{R_1\leftarrow R_1+\frac{433}{{750}}R_2}\\
+\myvec{1 & 0&\frac{12001}{10700}\\0 & 1 & \frac{400}{107}\\0& 0&0}\label{eq7}
+\end{multline}
+On solving for values of $\vec{c}$ from \eqref{eq7} 
+ The vertex of parabola is $\vec{c}$=$\myvec{\frac{12001}{10700}\\\frac{400}{107}}$.
+\end{document}
+ 
