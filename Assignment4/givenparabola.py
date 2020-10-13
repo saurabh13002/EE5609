@@ -101,5 +101,4 @@ plt.ylabel('$y$')
 plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
-
 plt.show()
