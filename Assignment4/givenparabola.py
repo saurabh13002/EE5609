@@ -81,7 +81,7 @@ xActualparab = P@xStandardparab + c[:,np.newaxis]
 #Labeling the coordinates
 parab_coords = np.vstack((O,c)).T
 plt.scatter(parab_coords[0,:], parab_coords[1,:])
-vert_labels = ['$O$','$c (1.11, 3.73)$']
+vert_labels = ['$O$','$c (12001/10700, 400/107)$']
 for i, txt in enumerate(vert_labels):
     plt.annotate(txt, # this is the text
                  (parab_coords[0,i], parab_coords[1,i]), # this is the point to label
@@ -95,10 +95,13 @@ for i, txt in enumerate(vert_labels):
 #Plotting the actual parabola
 #plt.plot(xStandardparab[0,:],xStandardparab[1,:],label='Parabola',color='r')
 plt.plot(xActualparab[0,:],xActualparab[1,:],label='Given Parabola',color='r')
-
+plt.plot(c[0],c[1],marker='o',color='black',label='centre (1.12,3.74)') 
 plt.xlabel('$x$')
 plt.ylabel('$y$')
 plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
+plt.xlim(-1,4 )
+plt.ylim(3,8)
 plt.show()
+
