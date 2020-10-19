@@ -223,16 +223,20 @@ From \eqref{5},
 \end{align}
 Now,
 \begin{align}
-	\vec{Q} = \myvec{\frac{\sqrt{3}}{2} \\-\frac{1}{{2}}} 
+	\vec{Q} = \myvec{\frac{\sqrt{3}}{2}&0 \\-\frac{1}{{2}}&0} 
 \end{align}
-Now, we observe that $\vec{Q}$$\vec{Q}^T$ = $\vec{Q}^T$$\vec{Q}$ = $\vec{I}$
-\begin{multline}
-	\myvec{\frac{\sqrt{3}}{2}&\\-\frac{1}{{2}}} \myvec{\frac{\sqrt{3}}{2}&-\frac{1}{{2}}} =\myvec{1}=\vec{I}
-\end{multline}
+
 Now, by \eqref{6} we can wrie matrix $\vec{A}$ as
 \begin{align}
-	{\myvec{3 &-\sqrt3\\-\sqrt3 & 1}}= \myvec{\frac{\sqrt{3}}{2}\\-\frac{1}{{2}}}
-	\myvec{2\sqrt{3} & -2}
+	{\myvec{3 &-\sqrt3\\-\sqrt3 & 1}}= \myvec{\frac{\sqrt{3}}{2}&0\\-\frac{1}{{2}}&0}
+	\myvec{2\sqrt{3} & -2\\0&0}
 \end{align}
 which is the required $\vec{QR}$ decomposition of $\vec{A}$.
+
+
+
+
+
+
+
 \end{document}
