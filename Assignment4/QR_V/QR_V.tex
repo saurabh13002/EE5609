@@ -220,12 +220,7 @@ From \eqref{5},
 \begin{align}
 	k_2 = \myvec{0 & 0}\myvec{-\sqrt{3}\\ 1} = 0
 \end{align}
-Now, by \eqref{6} we can write matrix $\vec{A}$ as
-\begin{align}
-	{\myvec{3 &-\sqrt3\\-\sqrt3 & 1}}= \myvec{\frac{\sqrt{3}}{2}&0\\-\frac{1}{{2}}&0}
-	\myvec{2\sqrt{3} & -2\\0&0}
-\end{align}
-which is the required $\vec{QR}$ decomposition of $\vec{A}$.\\ \\
+
 \textbf{Verification for $\vec{Q}^T\vec{Q}=I$}\\
 Here we observed that the second vector in $\vec{Q}$ is zero since the column vectors in $\vec{A}$ are dependent. Thus, $\vec{Q}$ is effectively written as:
 \begin{align}
@@ -235,5 +230,11 @@ We observe that $\vec{Q}^T\vec{Q} = \vec{I}$
 \begin{align}
  \vec{Q}^T\vec{Q}=\myvec{\frac{\sqrt{3}}{2}&-\frac{1}{{2}}}\myvec{\frac{\sqrt{3}}{2} \\-\frac{1}{{2}}} =1  
 \end{align}
-Hence, Verified.
+Hence, Verified.\\ \\
+Now,for a 2x2 matrix $\vec{A}$ we can write matrix $\vec{Q}$$\vec{R}$ as product of respective coloumn and row vector as,
+\begin{align}
+	{\myvec{3 &-\sqrt3 \\ -\sqrt3 & 1}}= \myvec{\frac{\sqrt{3}}{2} \\ -\frac{1}{{2}}}
+	\myvec{2\sqrt{3} & -2}
+\end{align}
+which is the required $\vec{QR}$ decomposition of $\vec{A}$.
 \end{document}
