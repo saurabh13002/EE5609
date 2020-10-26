@@ -1,1 +1,308 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
 
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\begin{document}
+%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{\ensuremath{E\left[ #1 \right]}}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand\inv[1]{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{EE5609: Matrix Theory\\
+          Assignment-5\\}
+\author{Major Saurabh Joshi\\MTech Artificial Intelligence\\AI20MTECH13002 }
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This  document finds the coordinates of foot of perpendicular using Singular Value Decomposition. 
+\end{abstract}
+Download the latex code from 
+%
+%
+%
+\begin{lstlisting}
+https://github.com/saurabh13002/EE5609/tree/master/Assignment5_SVD
+\end{lstlisting}
+%
+\section{Problem}
+Perform SVD and find the foot of the perpendicular from any point outside the plane.
+ \myvec{14&-3&-18}$\vec{x}$ = -1
+ \section{\textbf{Solution}}
+ Let the point be $\myvec{2\\3\\-5}$,
+First we find orthogonal vectors $\vec{m_1}$ and $\vec{m_2}$ to the given normal vector $\vec{n}$. Let, $\vec{m}$ = $\myvec{a\\b\\c}$, then
+\begin{align}
+\vec{m^T}\vec{n} &= 0\\
+\implies\myvec{a&b&c}\myvec{14\\-3\\18} &= 0\\
+\implies 14a-3b+18c &= 0
+\end{align}
+Putting a=1 and b=0 we get,
+\begin{align}
+\vec{m_1} &= \myvec{1\\0\\\frac{-7}{9}}\end{align}
+Putting a=0 and b=1 we get,
+\begin{align}
+\vec{m_2} &= \myvec{0\\1\\\frac{1}{6}}
+\end{align}
+Now we solve the equation,
+\begin{align}
+\vec{M}\vec{x} &= \vec{b}\label{eq1}\\
+\intertext{Putting values in \eqref{eq1},}
+\myvec{1&0\\0&1\\\frac{-7}{9}&\frac{1}{6}}\vec{x} &= \myvec{2\\3\\-5}\label{eq2}
+\end{align}
+In order to solve \eqref{eq2},  perform Singular Value Decomposition on $\vec{M}$ as follows,
+\begin{align}
+\vec{M}=\vec{U}\vec{S}\vec{V}^T\label{eq100}
+\end{align}
+Where the columns of $\vec{V}$ are the eigen vectors of $\vec{M}^T\vec{M}$ ,the columns of $\vec{U}$ are the eigen vectors of $\vec{M}\vec{M}^T$ and $\vec{S}$ is diagonal matrix of singular value of eigenvalues of $\vec{M}^T\vec{M}$.
+\begin{align}
+\vec{M}^T\vec{M}=\myvec{\frac{130}{81}&\frac{-7}{54}\\\frac{-7}{54}&\frac{37}{36}}\label{eqMTM}\\
+\vec{M}\vec{M}^T=\myvec{1&0&\frac{-7}{9}\\0&1&\frac{1}{6}\\\frac{-7}{9}&\frac{1}{6}&\frac{205}{324}}
+\end{align}
+From \eqref{eq1} putting \eqref{eq100} we get,
+\begin{align}\label{eqX}
+\vec{U}\vec{S}\vec{V}^T\vec{x} & = \vec{b}\\
+\implies\vec{x} &= \vec{V}\vec{S_+}\vec{U^T}\vec{b}
+\end{align}
+Where $\vec{S_+}$ is Moore-Penrose Pseudo-Inverse of $\vec{S}$.Now, calculating eigen value of $\vec{M}\vec{M}^T$,
+\begin{align}
+\mydet{\vec{M}\vec{M}^T - \lambda\vec{I}} &= 0\\
+\implies\myvec{1-\lambda&0&\frac{1}{2}\\0&1-\lambda&1\\\frac{1}{2}&1&\frac{205}{324}-\lambda} &=0\\
+\implies-\lambda^3+\frac{853}{324} \lambda^2-\frac{529}{324}\lambda &=0
+\end{align}
+Hence eigen values of $\vec{M}\vec{M}^T$ are,
+\begin{align}
+\lambda_1 &=\frac{529}{324}\\
+\lambda_2 &= 1\\
+\lambda_3 &=0
+\end{align}
+Hence the eigen vectors of $\vec{M}\vec{M}^T$ are,
+\begin{align}
+\vec{u}_1=\myvec{\frac{-252}{205}\\\frac{54}{205}\\1},
+\vec{u}_2=\myvec{\frac{3}{4}\\1\\0},
+\vec{u}_3=\myvec{\frac{7}{9}\\\frac{-1}{6}\\1}
+\end{align}
+Normalizing the eigen vectors we get,
+\begin{align}
+\vec{u}_1=\myvec{\frac{-252}{23\sqrt{205}}\\\frac{54}{23\sqrt{205}}\\\frac{\sqrt{205}}{{23}}},
+\vec{u}_2=\myvec{\frac{3}{\sqrt{205}}\\\frac{14}{\sqrt{205}}\\0},
+\vec{u}_3=\myvec{\frac{14}{23}\\\frac{-3}{23}\\\frac{18}{23}}
+\end{align}
+Hence we obtain $\vec{U}$ of \eqref{eq100} as follows,
+ $\vec{U}$\begin{align}\label{eqU}
+\myvec{\frac{-252}{23\sqrt{205}}& \frac{3}{\sqrt{205}}&\frac{14}{23}\\
+\frac{54}{23\sqrt{205}}&\frac{14}{\sqrt{205}}&-\frac{3}{23}\\
+\frac{\sqrt{205}}{{23}}&0&\frac{18}{23}}
+\end{align}
+After computing the singular values from eigen values $\lambda_1, \lambda_2, \lambda_3$ we get $\vec{S}$ of \eqref{eq100} as follows,
+\begin{align}\label{eqS}
+\vec{S}=\myvec{\frac{23}{18}&0\\0&1\\0&0}
+\end{align}
+Now, calculating eigen value of $\vec{M}^T\vec{M}$,
+\begin{align}
+\mydet{\vec{M}^T\vec{M} - \lambda\vec{I}} &= 0\\
+\implies\myvec{\frac{130}{81}-\lambda&\frac{-7}{54}\\\frac{-7}{54}&\frac{37}{36}-\lambda} &=0\\
+\implies\lambda^2-\frac{853}{324}\lambda+\frac{529}{324} &=0
+\end{align}
+Hence eigen values of $\vec{M}^T\vec{M}$ are,
+\begin{align}
+\lambda_4 &= \frac{529}{324}\\
+\lambda_5 &=1
+\end{align}
+Hence the eigen vectors of $\vec{M}^T\vec{M}$ are,
+\begin{align}
+\vec{v}_1=\myvec{\frac{-14}{3}\\1},
+\vec{v}_2=\myvec{\frac{3}{14}\\1}
+\intertext{Normalizing the eigen vectors we get,}
+\vec{v}_1=\myvec{\frac{-14}{\sqrt{205}}\\\frac{3}{\sqrt{205}}},
+\vec{v}_2=\myvec{\frac{3}{\sqrt{205}}\\\frac{14}{\sqrt{205}}}
+\end{align}
+Hence we obtain $\vec{V}$ of \eqref{eq100} as follows,
+\begin{align}
+\vec{V}=\myvec{\frac{-14}{\sqrt{205}}&\frac{3}{\sqrt{205}}\\\frac{3}{\sqrt{205}}&\frac{14}{\sqrt{205}}}
+\end{align}
+ From \eqref{eq100} we get the Singular Value Decomposition of $\vec{M}$ ,
+\begin{align}
+\vec{M} = \myvec{\frac{-252}{23\sqrt{205}}& \frac{3}{\sqrt{205}}&\frac{14}{23}\\
+\frac{54}{23\sqrt{205}}&\frac{14}{\sqrt{205}}&-\frac{3}{23}\\
+\frac{\sqrt{205}}{{23}}&0&\frac{18}{23}}\myvec{\frac{23}{18}&0\\0&1\\0&0}\myvec{\frac{-14}{\sqrt{205}}&\frac{3}{\sqrt{205}}\\\frac{3}{\sqrt{205}}&\frac{14}{\sqrt{205}}}^T
+\end{align}
+Moore-Penrose Pseudo inverse of $\vec{S}$ is given by,
+\begin{align}
+\vec{S_+} = \myvec{\frac{18}{23}&0&0\\0&1&0}
+\end{align}
+From \eqref{eqX} we get,
+\begin{align}
+\vec{U}^T\vec{b}&=\myvec{-\frac{415107}{100000}\\\frac{167623}{50000}\\-\frac{154347}{50000}}\\
+\vec{S_+}\vec{U}^T\vec{b}&=\myvec{-\frac{1624313691}{500000000}\\\frac{167623}{50000}}\\
+\vec{x} = \vec{V}\vec{S_+}\vec{U}^T\vec{b} &= \myvec{\frac{969580693}{250000000}\\\frac{32467791}{12500000}}=\myvec{3.87\\2.59}\label{eq85}
+\end{align}
+Verifying the solution of \eqref{eq85} using,
+\begin{align}
+\vec{M}^T\vec{M}\vec{x} = \vec{M}^T\vec{b}\label{eqVerify}
+\end{align}
+Evaluating the R.H.S in \eqref{eqVerify} we get,
+\begin{align}
+\vec{M}^T\vec{M}\vec{x} &= \myvec{\frac{53}{9}\\\frac{13}{6}}\\
+\implies\myvec{\frac{130}{81}&\frac{-7}{54}\\\frac{-7}{54}&\frac{37}{36}}\vec{x} &= \myvec{\frac{53}{9}\\\frac{13}{6}}\label{eq:eq17}
+\end{align}
+Solving the augmented matrix of \eqref{eq:eq17} we get,
+\begin{align}
+\myvec{\frac{130}{81}&\frac{-7}{54}&\frac{53}{9}\\\frac{-7}{54}&\frac{37}{36}&\frac{13}{6}} &\xleftrightarrow{R_1=\frac{81}{130}R_1}\myvec{1&\frac{-21}{260}&\frac{477}{130}\\\frac{-7}{54}&\frac{37}{36}&\frac{13}{6}}\\
+&\xleftrightarrow{R_2=R_2+\frac{7}{54}R_1}\myvec{1&\frac{-21}{260}&\frac{477}{130}\\0&\frac{529}{520}&\frac{687}{260}}\\
+&\xleftrightarrow{R_2=\frac{520}{529}R_2}\myvec{1&\frac{-21}{260}&\frac{477}{130}\\0&1&\frac{1374}{529}}\\
+&\xleftrightarrow{R_1=R_1+\frac{21}{260}R_2}\myvec{1&0&\frac{2052}{529}\\0&1&\frac{1374}{529}}\label{eq:eq13}
+\end{align}
+From equation \eqref{eq:eq13}, solution is given by,
+\begin{align}\label{eq:eq14}
+\vec{x}=\myvec{\frac{2052}{529}\\\frac{1374}{529}}=\myvec{3.87\\2.59}
+\end{align}
+Comparing results of $\vec{x}$ from \eqref{eq85} and \eqref{eq:eq14}, we can say that the solution is verified.
+\end{document}
+ 
