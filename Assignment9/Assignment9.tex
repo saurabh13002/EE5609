@@ -153,7 +153,7 @@ Show that the vectors
 \end{align}
 form a basis for $\R^3$. Express each of the standard basis vectors as linear combinations
 of $\myvec{\vec{\alpha_1} &  \vec{\alpha_2} & \vec{\alpha_3}}$
-\section{Result used}
+\section{Theorem}
 \begin{theorem} \label{1}
 Let $\vec{V}$ be an $n$-dimensional vector space over the field $\vec{F}$, and let $\beta$ and $\beta'$ be two ordered basis of $\vec{V}$. Then, there is a unique, necessarily invertible, $n\times n$ matrix $\vec{P}$ with entries in $\vec{F}$ such that 
 \begin{enumerate}
@@ -185,7 +185,7 @@ Now,by row reduction
 \begin{align}
 \myvec{1 & 1 &  0 \\ 0 & 2 & -3  \\ -1 & 1 & 2} &\xleftrightarrow[]{R_3=R_3+R_1}\myvec{1 & 1 &  0 \\ 0 & 2 & -3  \\ 0 & 2 & 2  } \\
  &\xleftrightarrow[]{R_3=R_3-R_2}\myvec{1 & 1 &  0 \\ 0 & 2 & -3  \\ 0 & 0 & 5  } \\
-&\xleftrightarrow[]{R_2=\frac{R_2}{5}}\myvec{1 & 1 &  0 \\ 0 & 1 &\frac{-3}{2}   \\ 0 & 0 & 5  } \\
+&\xleftrightarrow[]{R_2=\frac{R_2}{2}}\myvec{1 & 1 &  0 \\ 0 & 1 &\frac{-3}{2}   \\ 0 & 0 & 5  } \\
 &\xleftrightarrow[]{R_1=R_1-R_2}\myvec{1 & 0 &  \frac{3}{2} \\ 0 & 1 &\frac{-3}{2}   \\ 0 & 0 & 5  } \\
 &\xleftrightarrow[]{R_3=\frac{R_3}{5}}\myvec{1 & 0 &   \frac{3}{2} \\ 0 & 1 & \frac{-3}{2}   \\ 0 & 0 & 1  } \\
 &\xleftrightarrow[]{R_1=R_1-\frac{3}{2}R_3}\myvec{1 & 0 &  0 \\ 0 & 1 & \frac{-3}{2}   \\ 0 & 0 & 1  } \\
@@ -206,16 +206,16 @@ Now, by row reducing $\vec{A|I}$ as follows
 &\xleftrightarrow[]{R_3=R_3-R_2}\myvec{1 & 1 & 0 & 1& 0 &0  \\ 0 & 2 & -3 & 0& 1&0 \\ 0 & 0 & 5& 1& -1 &1}
 \end{multline}
 \begin{multline}
-&\xleftrightarrow[]{R_2=\frac{R_2}{2}}\myvec{1 & 1 & 0 & 1& 0 &0  \\ 0 & 2 & \frac{-3}{2} & 0& \frac{1}{2}&0 \\ 0 & 0 & 5& 1& -1 &1}
+&\xleftrightarrow[]{R_2=\frac{R_2}{2}}\myvec{1 & 1 & 0 & 1& 0 &0  \\ 0 & 1 & \frac{-3}{2} & 0& \frac{1}{2}&0 \\ 0 & 0 & 5& 1& -1 &1}
 \end{multline}
 \begin{multline}
-&\xleftrightarrow[]{R_1=R_1-R_2}\myvec{1 & 0 & \frac{3}{2} & 1& \frac{-1}{2} &0  \\ 0 & 2 & \frac{-3}{2} & 0& \frac{1}{2}&0 \\ 0 & 0 & 5& 1& -1 &1}
+&\xleftrightarrow[]{R_1=R_1-R_2}\myvec{1 & 0 & \frac{3}{2} & 1& \frac{-1}{2} &0  \\ 0 & 1 & \frac{-3}{2} & 0& \frac{1}{2}&0 \\ 0 & 0 & 5& 1& -1 &1}
 \end{multline}
 \begin{multline}
-&\xleftrightarrow[]{R_3=\frac{R_3}{5}}\myvec{1 & 0 & \frac{3}{2} & 1& \frac{-1}{2} &0  \\ 0 & 2 & \frac{-3}{2} & 0& \frac{1}{2}&0 \\ 0 & 0 & 1& \frac{1}{5}& \frac{-1}{5} &\frac{1}{5}}
+&\xleftrightarrow[]{R_3=\frac{R_3}{5}}\myvec{1 & 0 & \frac{3}{2} & 1& \frac{-1}{2} &0  \\ 0 & 1 & \frac{-3}{2} & 0& \frac{1}{2}&0 \\ 0 & 0 & 1& \frac{1}{5}& \frac{-1}{5} &\frac{1}{5}}
 \end{multline}
 \begin{multline}
-&\xleftrightarrow[]{R_1=R_1-\frac{3R_3}{2}}\myvec{1 & 0 & 0 & \frac{7}{10}& \frac{-1}{5} &\frac{-3}{10} \\ 0 & 2 & \frac{-3}{2} & 0& \frac{1}{2}&0 \\ 0 & 0 & 1& \frac{1}{5}& \frac{-1}{5} &\frac{1}{5}}
+&\xleftrightarrow[]{R_1=R_1-\frac{3R_3}{2}}\myvec{1 & 0 & 0 & \frac{7}{10}& \frac{-1}{5} &\frac{-3}{10} \\ 0 & 1 & \frac{-3}{2} & 0& \frac{1}{2}&0 \\ 0 & 0 & 1& \frac{1}{5}& \frac{-1}{5} &\frac{1}{5}}
 \end{multline}
 \begin{multline}
 &\xleftrightarrow[]{R_2=R_2+\frac{3R_3}{2}}\myvec{1 & 0 & 0 & \frac{7}{10}& \frac{-1}{5} &\frac{-3}{10} \\ 0 & 1 & 0 & \frac{3}{10}& \frac{1}{5}&\frac{3}{10} \\ 0 & 0 & 1& \frac{1}{5}& \frac{-1}{5} &\frac{1}{5}}	\label{3}
