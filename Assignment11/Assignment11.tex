@@ -1,22 +1,15 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
+
 \usepackage{setspace}
 \usepackage{gensymb}
-%\doublespacing
+\usepackage{supertabular}
 \singlespacing
 
-%\usepackage{graphicx}
-%\usepackage{amssymb}
-%\usepackage{relsize}
+
 \usepackage[cmex10]{amsmath}
-%\usepackage{amsthm}
-%\interdisplaylinepenalty=2500
-%\savesymbol{iint}
-%\usepackage{txfonts}
-%\restoresymbol{TXF}{iint}
-%\usepackage{wasysym}
+
 \usepackage{amsthm}
-%\usepackage{iithtlc}
+
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -24,11 +17,10 @@
 \usepackage{cite}
 \usepackage{cases}
 \usepackage{subfig}
-%\usepackage{xtab}
+
 \usepackage{longtable}
 \usepackage{multirow}
-%\usepackage{algorithm}
-%\usepackage{algpseudocode}
+
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{steinmetz}
@@ -37,9 +29,9 @@
 \usepackage{verbatim}
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
-%\usepackage{stmaryrd}
-\usepackage{tkz-euclide} % loads  TikZ and tkz-base
-%\usetkzobj{all}
+
+\usepackage{tkz-euclide}
+
 \usetikzlibrary{calc,math}
 \usepackage{listings}
     \usepackage{color}                                            %%
@@ -49,16 +41,12 @@
     \usepackage{multirow}                                         %%
     \usepackage{hhline}                                           %%
     \usepackage{ifthen}                                           %%
-  %optionally (for landscape tables embedded in another document): %%
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
-%\usepackage{enumerate}
-
-%\usepackage{wasysym}
-%\newcounter{MYtempeqncnt}
+\usepackage{graphicx}
 \DeclareMathOperator*{\Res}{Res}
-%\renewcommand{\baselinestretch}{2}
+
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
@@ -67,7 +55,7 @@
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
 
-% correct bad hyphenation here
+
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
@@ -77,14 +65,9 @@ frame=single,
 breaklines=true,
 columns=fullflexible
 }
-%\lstset{
-%language=tex,
-%frame=single, 
-%breaklines=true
-%}
-
 \begin{document}
-%
+
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
 \newtheorem{proposition}{Proposition}[section]
@@ -92,16 +75,11 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
-%\newtheorem{thm}{Theorem}[section] 
-%\newtheorem{defn}[thm]{Definition}
-%\newtheorem{algorithm}{Algorithm}[section]
-%\newtheorem{cor}{Corollary}
+
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
-\newcommand{\R}{\mathbb{R}}
 \bibliographystyle{IEEEtran}
-%\bibliographystyle{ieeetr}
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -122,64 +100,101 @@ columns=fullflexible
 \providecommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
 %\providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
-\providecommand{\mean}[1]{\ensuremath{E\left[ #1 \right]}}
+\providecommand{\mean}[1]{E\ensuremath{\left[ #1 \right]}}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \newcommand{\cosec}{\,\text{cosec}\,}
+\newcommand{\R}{\mathbb{R}}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
-\newcommand\inv[1]{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}
-%\numberwithin{equation}{section}
 \numberwithin{equation}{subsection}
-%\numberwithin{problem}{section}
-%\numberwithin{definition}{section}
 \makeatletter
 \@addtoreset{figure}{problem}
 \makeatother
 \let\StandardTheFigure\thefigure
 \let\vec\mathbf
-%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 \renewcommand{\thefigure}{\theproblem}
-%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
-%\counterwithin{equation}{enumi}
-%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
      \def\rightbox#1{\makebox[0in][r]{#1}}
      \def\centbox#1{\makebox[0in]{#1}}
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
+\onecolumn
 \title{EE5609: Matrix Theory\\
           Assignment-11\\}
 \author{Major Saurabh Joshi\\MTech Artificial Intelligence\\AI20MTECH13002 }
 \maketitle
-\newpage
-%\tableofcontents
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 \begin{abstract}
-This document solves problem on Eigen values and properties .  
+This document solves problem on Eigen values and properties.
 \end{abstract}
-Download the latex code from 
-%
-%
-%
+Download all solutions from 
 \begin{lstlisting}
 https://github.com/saurabh13002/EE5609/tree/master/Assignment11
 \end{lstlisting}
-%
 \section{Problem}
-& Let $\vec{A}$ be a real symmetric matrix and  & $\vec{B}=\vec{I}+i\vec{A}$, where $i^2=-1$. Then\\
-1.& $\vec{B}$ is invertible if and only if $\vec{A}$ is invertible.\\
-2.& All eigenvalues of $\vec{B}$ are necessarily real.\\
-3.& $\vec{B}-\vec{I}$ is necessarily invertible.\\
-4.& $\vec{B}$ is necessarily invertible.
-\section{Solution}
+Let $\vec{A}$ be a real symmetric matrix and  $\vec{B}=\vec{I}+i\vec{A}$, where $i^2=-1$. Then\\
+1. $\vec{B}$ is invertible if and only if $\vec{A}$ is invertible.\\
+2. All eigenvalues of $\vec{B}$ are necessarily real.\\
+3. $\vec{B}-\vec{I}$ is necessarily invertible.\\
+4. $\vec{B}$ is necessarily invertible.
+\section{solution}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|p{5cm}|p{10cm}|}
+\hline
+& \\
+Given &Let $\vec{A}$ be a real symmetric matrix,\\\\& and $\vec{B}=\vec{I}+i\vec{A}$, where $i^2=-1$.\\
+&\\
+\hline
+&\\
+To find  & The correct option.\\
+&\\
+ \hline
+& \\
+Proof  & Let us assume,\\\\ & $\lambda$ be the eigen value of $\vec{A}$, as $\vec{A}$ is symmetric matrix.\\
+&\\
+& $\implies \lambda\epsilon \R$\\
+&\\
+& Then, $i\lambda$ is an eigen value of $i\vec{A}$\\
+&\\
+& $\implies 1+i\lambda$ is an eigen value of $\vec{I}+i\vec{A}$ \\
+& \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\newpage
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|p{5cm}|p{10cm}|}
+\hline
+&\\
+& Given, $\vec{B}=\vec{I}+i\vec{A}$\\\\
+& Therefore, $1+i\lambda$ is an eigen value of $\vec{B}$.\\
+&\\
+& Hence, 0 can not be the eigen value of $\vec{B}$\\
+&\\
+\textbf{Property}: $\det\vec{B}$ is equals to 
+& $\implies \det\vec{B} \neq 0$\\product of eigen values of $\vec{B}$
+& Therefore, $\vec{B}$ is necessarily invertible.
+&\\
+\hline
+&\\
+Correct option  & The correct option is $\vec{4}$.\\
+&\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{document}
 
 &Given, $\vec{A}$ is a symmetric matrix,\\Let us assume $\lambda$ be the &eigen value of $\vec{A}$\\\\
 &\implies $\lambda\epsilon \R$ \\\\ 
@@ -192,4 +207,3 @@ https://github.com/saurabh13002/EE5609/tree/master/Assignment11
 &\implies $\det\vec{B} \neq 0$\\\\
 & Therefore, $\vec{B}$ is necessarily invertible.\\\\
 &Hence $\vec{4}$. is the correct answer.
- \end{document}
