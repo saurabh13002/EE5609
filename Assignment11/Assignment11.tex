@@ -143,103 +143,76 @@ https://github.com/saurabh13002/EE5609/tree/master/Assignment11
 Let $\vec{A}$ be a real symmetric matrix and  $\vec{B}=\vec{I}+i\vec{A}$, where $i^2=-1$. Then choose the correct option.\\
 \begin{enumerate}
 	\item  $\vec{B}$ is invertible if and only if $\vec{A}$ is invertible.\\
-	\item All eigenvalues of $\vec{B}$ are necessarily real.\\
+	\item All Eigenvalues of $\vec{B}$ are necessarily real.\\
 	\item $\vec{B}-\vec{I}$ is necessarily invertible.\\
 	\item $\vec{B}$ is necessarily invertible.\\
 \end{enumerate}
-\section{\textbf{Results used}}
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{|p{2cm}|p{13cm}|}
+\section{\textbf{Explanation}}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|l|l|}
 \hline
-&\\
-Result 1 & Eigenvalues of real symmetric matrix are real\\
-&\\
-\hline
-&\\
-Result 2 & If a square matrix  $\vec{A}$ is lower or upper triangular\\& then Eigen values of $\vec{A}$ are  entries on the main diagonal.\\ 
-&\\
-\hline
-&\\
-Result 3 &If the eigenvalue of a matrix $\vec{A}$ is $\lambda $,corresponding to the Eigen vector $X$,\\&then
-$\vec{A}+c\vec{I}$ has Eigen value $\lambda+c$, corresponding to the Eigen vector $X$.\\&$c$ can be scalar or complex.\\
-&\\
-\hline
-&\\
-Result 3&$\det\vec{A}$=product of Eigen values of $\det\vec{A}$\\
-&\\
-\hline
-    \end{tabular}
-    \end{center}
-\end{table}
-\newpage
-\section{\textbf{Solution}}
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{|p{5cm}|p{10cm}|}
+\multirow{3}{*}{} & \\
+Statement 1. &$\vec{B}$ is invertible if and only if $\vec{A}$ is  invertible.\\
 \hline
 & \\
-Given &Let $\vec{A}$ be a real symmetric matrix,
-\\& and $\vec{B}=\vec{I}+i\vec{A}$, where $i^2=-1$.\\
+False statement& Matrix $\vec{B}$ is invertible even if $\vec{A}$ is non invertible.\\
+\hline
+Example:&Consider a matrix \\&\parbox{12cm}{\begin{align}
+ \vec{A}=\myvec{
+1 &0 \\
+0&0}\label{eq1}\end{align}}\\& a real non invertible,symmetric matrix.\\&\parbox{12cm}{\begin{align}
+&\implies\vec{B}=\myvec{1 & 0\\ 0 & 1}+i\myvec{1 & 0\\ 0 & 0}=\myvec{1+i & 0\\ 0 & 1  }\label{eq2}\end{align}}\\ 
+
+&is invertible even if $\vec{A}$ is non invertible.\\
+\hline
+
+\pagebreak
+\hline
+\multirow{3}{*}&\\
+Statement 2. & All Eigenvalues of $\vec{B}$ are necessarily real.\\
 \hline
 &\\
-Checking Option 1
-& Lets assume, $\vec{A}=\myvec{1 & 0\\ 0 & 0}$ a real symmetric and non invertible matrix,as the rank of $\vec{A}$ $<$ $2.$\\& $\implies$ Eigen values of $\vec{A}$ are $1$ and $0$ \\&$\implies\vec{B}=\myvec{1 & 0\\ 0 & 1}+i\myvec{1 & 0\\ 0 & 0}=\myvec{1+i & 0\\ 0 & 1  },$ is invertible even if $\vec{A}$ is non invertible.\\&Thus Option 1 is incorrect.  \\
+False statement& Matrix $\vec{B}$ can have complex Eigenvalues.\\
+\hline
+Proof  :& Eigen values of $\vec{B}$ = Eigen values of     
+($\vec{I}$) + i (Eigen values of $\vec{A}$).
+\\&Clearly from \eqref{eq2} above Eigen values of $\vec{B}$ are  $1$ and $1+i$   respectively.\\
+& Hence $\vec{B}$ can also have complex Eigen value.\\
+     \hline
+\multirow{3}{*} & \\ 
+Statement 3.  & $\vec{B}-\vec{I}$ is necessarily invertible.\\
 \hline
 &\\
-Checking Option 2 
-& Eigen values of $\vec{B}$ = Eigen values of  $\vec{I}$ + i (Eigen values of $\vec{A}$).\\& Clearly, Eigen values of $\vec{B}$ are, $1$ and $1+i$  ,\\& Hence Eigen values of $\vec{B}$ are necessarily real is wrong.\\&
-Thus, Option 2 is incorrect.\\
+False statement& $\vec{B}-\vec{I}=i\vec{A}$ will be invertible if $\vec{A}$, is invertible.\\\hline
+&\\
+Proof: & We have $\vec{B}-\vec{I}=i\vec{A}$\\
+&$\implies \vec{B-I}=i\vec{A}=\myvec{i & 0\\ 0 & 0}$,from \eqref{eq1}\\
+ &Hence $\vec{B-I}$ is not invertible,unless $\vec{A}$ is invertible. \\
 \hline
- &\\
-Checking Option 3
-& $\vec{B}-\vec{I}=i\vec{A}$\\
-&$\implies \vec{(B-I)}=i\vec{A}=\myvec{i & 0\\ 0 & 0}$\\
-& Hence, $\vec{B}-\vec{I}$ is not invertible \\& Thus option 3 is also incorrect.\\
+\multirow{3}{*}&\\
+Statement 4. & $\vec{B}$ is necessarily invertible.\\
 \hline
 & \\
-Checking Option 4 & Let $X$ be an Eigen vector of $\vec{A}$ corresponding to Eigen value $\lambda$. $\lambda\epsilon \R$\\
-& $\implies$ $\vec{A}$$X$=$\lambda X $ \\
+Correct Statement:& Matrix $\vec{B}$ has non zero Eigen values corresponding to Eigenvector $X$ .\\
+\hline
+Proof:& Let $X$ be an Eigen vector of $\vec{A}$ corresponding to Eigen value $\lambda$\\
 &\\
-& $\therefore$ $\vec{B}$$X=(\vec{I}+i\vec{A})X$= $\vec{I}$$X$+i$\vec{A}$$X$= $X$+$i\lambda$$X$\\
+&also,$\lambda\epsilon \R$\\
+&\\
+&$\implies$ $\vec{A}$$X$=$\lambda X $\\
+&\\
+&$\therefore$ $\vec{B}$$X=(\vec{I}+i\vec{A})X$= $\vec{I}$$X$+i$\vec{A}$$X$= $X$+$i\lambda$$X$\\
 &\\
 & $\implies$$\vec{B}$$X$ = $(1+i\lambda)$$X$\\
-&\\
-& Therefore, $1+i\lambda$ is an Eigen value of $\vec{B}$ corresponding to Eigen vector $X$,which are non zero.\\
-&\\
-& Therefore, all Eigen values of $\vec{B}$ are non zero \\
-&\\
-
+& Therefore, $1+i\lambda$ is an Eigen value of $\vec{B}$,\\
+& corresponding to Eigen vector $X$,which are non zero.\\
 & Hence, $\vec{B}$ is necessarily invertible.\\
-&\\
 \hline
-&\\
-Correct option  & The correct option is $\vec{4}$.\\
-&\\
-\hline
-    \end{tabular}
-    \end{center}
-\end{table}
+\caption{Solution summary}
+\label{table:1}
+\end{longtable}
 \end{document}
 
-&Given, $\vec{A}$ is a symmetric matrix,\\Let us assume $\lambda$ be the &eigen value of $\vec{A}$\\\\
-&\implies $\lambda\epsilon \R$ \\\\ 
-&\implies $i\lambda$ is eigen value of $i\vec{A}$\\\\
-&\implies $1+i\lambda$ is eigen value of $\vec{I}+i\vec{A}$\\\\
-& Given $\vec{B}=\vec{I}+i\vec{A}$\\\\
-&Therefore, $1+i\lambda$ is eigen value of $\vec{B}$\\\\
-&We know that, $\det\vec{B}$ is equals to product of eigen values of $\vec{B}$\\\\
-& Hence 0, can not be the eigen value of $\vec{B}$\\\\
-&\implies $\det\vec{B} \neq 0$\\\\
-& Therefore, $\vec{B}$ is necessarily invertible.\\\\
-&Hence $\vec{4}$. is the correct answer.
 
 
 
-
-Result 3 &If the eigenvalue of a matrix $\vec{A}$ is $\lambda $,\\&corresponding to the Eigen vector $x$,\\&then
-$\vec{A}+c\vec{I}$ has Eigen value $\lambda+c$\\& corresponding to the Eigen vector $x$.\\&$c$can be scalar or complex.
-
-Result 2 &A square matrix $\vec{A}$ lower or\\& upper triangular\\& then Eigen values of $\vec{A}$ are \\& entries on the main diagonal 
-& \\
-\hline
