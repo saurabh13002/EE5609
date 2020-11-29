@@ -145,54 +145,68 @@ Let $\vec{A}$ be a real symmetric matrix and  $\vec{B}=\vec{I}+i\vec{A}$, where 
 2. All eigenvalues of $\vec{B}$ are necessarily real.\\\\
 3. $\vec{B}-\vec{I}$ is necessarily invertible.\\\\
 4. $\vec{B}$ is necessarily invertible.\\
+\section{\textbf{Results used}}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|p{2cm}|p{13cm}|}
+\hline
+&\\
+Result 1 & Eigenvalues of real symmetric matrix are real\\
+&\\
+\hline
+&\\
+Result 2 & If a square matrix  $\vec{A}$ is lower or upper triangular\\& then Eigen values of $\vec{A}$ are  entries on the main diagonal.\\ 
+&\\
+\hline
+&\\
+Result 3 &If the eigenvalue of a matrix $\vec{A}$ is $\lambda $,corresponding to the Eigen vector $X$,\\&then
+$\vec{A}+c\vec{I}$ has Eigen value $\lambda+c$, corresponding to the Eigen vector $X$.\\&$c$ can be scalar or complex.\\
+&\\
+\hline
+&\\
+Result 3&$\det\vec{A}$=product of Eigen values of $\det\vec{A}$
+&\\
+\hline
+    \end{tabular}
+    \end{center}
+\end{table}
 \section{\textbf{solution}}
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{|p{5cm}|p{10cm}|}
 \hline
 & \\
-Given &Let $\vec{A}$ be a real symmetric matrix,\\
-&\\
-& and $\vec{B}=\vec{I}+i\vec{A}$, where $i^2=-1$.\\
-&\\
+Given &Let $\vec{A}$ be a real symmetric matrix,
+\\& and $\vec{B}=\vec{I}+i\vec{A}$, where $i^2=-1$.\\
 \hline
 &\\
 Checking Option 1
-& Lets assume, $\vec{A}$ is non invertible,\\&$\implies \det\vec{A}=0$\\&$\implies \det\vec{B}=\det\vec{I}$\\&$\implies\vec{B}$ is invertible even if $\vec{A}$ is non invertible.  \\& since,$\det\vec{I}=1$\\&Thus Option 1 is incorrect.  \\
-&\\
+& Lets assume, $\vec{A}=\myvec{1 & 0\\ 0 & 0}$ a real symmetric and non invertible matrix,as the rank of $\vec{A}$ $<$ $2.$\\& $\implies$ Eigen values of $\vec{A}$ are $1$ and $0$ \\&$\implies\vec{B}=\myvec{1 & 0\\ 0 & 1}+i\myvec{1 & 0\\ 0 & 0}=\myvec{1+i & 0\\ 0 & 1  },$ is invertible even if $\vec{A}$ is non invertible.\\&Thus Option 1 is incorrect.  \\
 \hline
 &\\
 Checking Option 2 
-& Eigen values of $\vec{B}$ = Eigen values of  $\vec{I}$ + i (Eigen values of $\vec{A}$).\\& Clearly, Eigen values of $\vec{B}$ are real only if $\vec{A}$, has zero Eigen values,\\&as $\vec{A}$ is a real symmetric matrix.\\&
+& Eigen values of $\vec{B}$ = Eigen values of  $\vec{I}$ + i (Eigen values of $\vec{A}$).\\& Clearly, Eigen values of $\vec{B}$ are, $1$ and $1+i$  ,\\& Hence Eigen values of $\vec{B}$ are necessarily real is wrong.\\&
 Thus, Option 2 is incorrect.\\
-& \\
 \hline
  &\\
 Checking Option 3
 & $\vec{B}-\vec{I}=i\vec{A}$\\
-&$\implies\det\vec{(B-I)}=\det i\vec{A}=\det\vec{A}$\\
-& Hence, $\vec{B}-\vec{I}$ is invertible only if $\vec{A}$ is invertible\\& Thus option 3 is also incorrect.\\
-&\\
+&$\implies \vec{(B-I)}=i\vec{A}=\myvec{i & 0\\ 0 & 0}$\\
+& Hence, $\vec{B}-\vec{I}$ is not invertible \\& Thus option 3 is also incorrect.\\
 \hline
 & \\
-Checking Option 4  & Let us assume,\\
-&\\ 
-& $\lambda$ be the eigen value of $\vec{A}$, as $\vec{A}$ is symmetric matrix.\\
+Checking Option 4 & Let $X$ be an Eigen vector of $\vec{A}$ corresponding to Eigen value $\lambda$. $\lambda\epsilon \R$\\
+& $\implies$ $\vec{A}$$X$=$\lambda X $ \\
 &\\
-& $\implies \lambda\epsilon \R$\\
+& $\therefore$ $\vec{B}$$X=(\vec{I}+i\vec{A})X$= $\vec{I}$$X$+i$\vec{A}$$X$= $X$+$i\lambda$$X$\\
 &\\
-& Then, $i\lambda$ is an eigen value of $i\vec{A}$\\
+& $\implies$$\vec{B}$$X$ = $(1+i\lambda)$$X$\\
 &\\
-& $\implies 1+i\lambda$ is an eigen value of $\vec{I}+i\vec{A}$ \\
+& Therefore, $1+i\lambda$ is an Eigen value of $\vec{B}$ corresponding to Eigen vector $X$,which are non zero.\\
 &\\
-& Given, $\vec{B}=\vec{I}+i\vec{A}$\\
+& Therefore, all Eigen values of $\vec{B}$ are non zero \\
 &\\
-& Therefore, $1+i\lambda$ is an eigen value of $\vec{B}$.\\
-&\\
-& Hence, 0 can not be the eigen value of $\vec{B}$\\
-&\\
-\textbf{Property}: $\det\vec{B}$ is equals to 
-& $\implies \det\vec{B} \neq 0$\\product of eigen values of $\vec{B}$
+
 & Therefore, $\vec{B}$ is necessarily invertible.\\
 &\\
 \hline
@@ -216,3 +230,13 @@ Correct option  & The correct option is $\vec{4}$.\\
 &\implies $\det\vec{B} \neq 0$\\\\
 & Therefore, $\vec{B}$ is necessarily invertible.\\\\
 &Hence $\vec{4}$. is the correct answer.
+
+
+
+
+Result 3 &If the eigenvalue of a matrix $\vec{A}$ is $\lambda $,\\&corresponding to the Eigen vector $x$,\\&then
+$\vec{A}+c\vec{I}$ has Eigen value $\lambda+c$\\& corresponding to the Eigen vector $x$.\\&$c$can be scalar or complex.
+
+Result 2 &A square matrix $\vec{A}$ lower or\\& upper triangular\\& then Eigen values of $\vec{A}$ are \\& entries on the main diagonal 
+& \\
+\hline
