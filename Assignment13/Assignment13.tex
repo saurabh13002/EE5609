@@ -1,0 +1,209 @@
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\ensuremath{\left[ #1 \right]}}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\newcommand{\R}{\mathbb{R}}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\onecolumn
+\title{EE5609: Matrix Theory\\
+          Assignment-13\\}
+\author{Major Saurabh Joshi\\MTech Artificial Intelligence\\AI20MTECH13002 }
+\maketitle
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download codes from 
+%
+\begin{lstlisting}
+https://github.com/saurabh13002/EE5609/tree/master/Assignment13
+\end{lstlisting}
+%
+ 
+\section{Question}
+Let $\vec{A}$,$\vec{B}$ be n × n matrices.Which of the following equals trace$(\vec{A}^2 \vec{B}^2)$?\\
+
+\begin{enumerate}
+\item (trace$(\vec{A} \vec{B}))^2.$
+\item trace$(\vec{A} \vec{B}^2 \vec{A}).$
+\item trace$((\vec{A} \vec{B})^2).$
+\item trace$(\vec{B} \vec{A} \vec{B} \vec{A}).$
+\end{enumerate}
+%
+\section{Solution}
+\begin{longtable}{|p{5cm}|p{13cm}|}
+\hline
+\textbf{Statement} &\textbf{Solution}\\
+\hline
+Definition & The trace of an n × n square matrix $\vec{A}$ is defined as:
+\begin{displaymath}tr({\vec{A}}) = \sum_{i=1}^n a_{ii} \end{displaymath}
+
+where $a_{ii}$ denotes the entry on the ith row and ith column of $\vec{A}.$ \\
+\hline
+Properties&
+\parbox{12cm}{\begin{align}\text{The properties of the trace}:
+tr(c{\vec{A}})=c\;tr({\vec{A}})\\
+tr({\vec{A}}^T)=tr({\vec{A}})\\
+tr({\vec{A}}+{\vec{B}})=tr({\vec{B}}+{\vec{A}})\\
+tr({\vec{A}}{\vec{B}})=tr({\vec{B}}{\vec{A}})\label{eq}\\
+tr({\vec{A}}^T{\vec{B}})=tr({\vec{A}}{\vec{B}}^T)\\
+tr({\vec{R}}^{-1}{\vec{A}}{\vec{R}})=tr({\vec{R}}^{-1}({\vec{A}}{\vec{R}}))\\
+=tr(({\vec{A}}{\vec{R}}){\vec{R}}^{-1})=tr({\vec{A}})
+\end{align}}\\
+\hline
+Checking $tr$$(\vec{A}^2 \vec{B}^2).$ &
+\parbox{12cm}{\begin{align}
+ \text{Upon rewriting and from \eqref{eq}, } tr(\vec{A}^2 \vec{B}^2)=tr(\vec{A}\vec{A} \vec{B}\vec{B})\\
+           = tr(\vec{B}\vec{A} \vec{A}\vec{B})\\
+           = tr(\vec{B}\vec{B} \vec{A}\vec{A})\\
+           = tr(\vec{A}\vec{B} \vec{B}\vec{A})\label{eq1}\\
+           = tr(\vec{A}\vec{A} \vec{B}\vec{B})\\
+           = tr(\vec{A}^2 \vec{B}^2)\label{eq2}
+\end{align}}\\
+\hline
+Checking ($tr$$(\vec{A} \vec{B}))^2.$&
+\parbox{12cm}{\begin{align}\text{from \eqref{eq},}\
+    (tr(\vec{A} \vec{B}))^2=(tr(\vec{B} \vec{A}))^2
+\end{align}}\\
+\hline
+ Checking $tr$$(\vec{A} \vec{B}^2 \vec{A}).$&
+\parbox{12cm}{\begin{align}\text{from \eqref{eq} and \eqref{eq1},}\\
+ tr(\vec{A} \vec{B}^2 \vec{A}) =tr(\vec{A}\vec{B} \vec{B}\vec{A})\\
+\text{ i.e from \eqref{eq2}} ,  tr(\vec{A} \vec{B}^2 \vec{A})=  tr(\vec{A}^2 \vec{B}^2)\label{eq3}\label{eql}  
+\end{align}}\\
+\hline
+Checking $tr$$(\vec{A} \vec{B})^2.$&
+\parbox{12cm}{\begin{align}\text{from \eqref{eq}}\\
+ tr(\vec{A} \vec{B})^2=tr(\vec{B}\vec{A})^2 
+\end{align}}\\
+\hline
+ Checking $tr$$(\vec{B} \vec{A} \vec{B} \vec{A}).$&
+\parbox{12cm}{\begin{align}\text{from \eqref{eq}}\\
+ tr(\vec{B} \vec{A} \vec{B} \vec{A}) =tr(\vec{A}\vec{B} \vec{A}\vec{B})\\
+ =tr(\vec{B}\vec{A} \vec{B}\vec{A})
+ \end{align}}\\
+\hline
+ Conclusion&
+Hence, from \eqref{eq},\eqref{eq1},\eqref{eql} option 2, ie  $tr$$(\vec{A} \vec{B}^2 \vec{A}).$ is the correct answer.\\
+\hline
+\caption*{Table1:Solution}
+\end{longtable}
+\end{document}
